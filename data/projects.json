@@ -1,0 +1,16 @@
+[
+  {"name":"AI-MLProj","html_url":"https://github.com/CSW04-exe/AI-MLProj","description":"This project creates a ANN and a SVM and compares their outputs for a Binary Classification problem.","language":null},
+  {"name":"BigDataProj","html_url":"https://github.com/CSW04-exe/BigDataProj","description":"Machine learning final project","language":null},
+  {"name":"Dynamic-Movement","html_url":"https://github.com/CSW04-exe/Dynamic-Movement","description":"Simulates 2D motion with steering behaviors (Seek, Flee, Arrive)","language":"Python"},
+  {"name":"GO_Lang-Program","html_url":"https://github.com/CSW04-exe/GO_Lang-Program","description":"Reads basketball player stats and calculates eFG% and TS%","language":"Go"},
+  {"name":"Julia-Program","html_url":"https://github.com/CSW04-exe/Julia-Program","description":"Reads basketball player stats and computes shooting metrics","language":"Julia"},
+  {"name":"Logistic-Regression","html_url":"https://github.com/CSW04-exe/Logistic-Regression","description":"Binary logistic regression implementation for Iris dataset","language":"Python"},
+  {"name":"Multivariate-Linear-Regression","html_url":"https://github.com/CSW04-exe/Multivariate-Linear-Regression","description":"Multivariable linear regression on Boston housing dataset","language":"Python"},
+  {"name":"OOP_w_Java_Project","html_url":"https://github.com/CSW04-exe/OOP_w_Java_Project","description":"Matrix calculator implemented in Java","language":"Java"},
+  {"name":"OS-Program","html_url":"https://github.com/CSW04-exe/OS-Program","description":"Priority-based process scheduler simulation","language":"Java"},
+  {"name":"Path-Finding","html_url":"https://github.com/CSW04-exe/Path-Finding","description":"A* algorithm implementation on a game graph","language":"Python"},
+  {"name":"Path-Following","html_url":"https://github.com/CSW04-exe/Path-Following","description":"2D path-following steering behavior simulation","language":"Python"},
+  {"name":"pira-see","html_url":"https://github.com/CSW04-exe/pira-see","description":"","language":null},
+  {"name":"State-Machines","html_url":"https://github.com/CSW04-exe/State-Machines","description":"State machine simulation for vehicle passing scenarios","language":"Python"},
+  {"name":"Univariate-Linear-Regression","html_url":"https://github.com/CSW04-exe/Univariate-Linear-Regression","description":"Single-variable linear regression examples","language":"Python"}
+]

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carter Ward — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="banner">
+    <div class="banner-inner">
+      <div class="profile">
+        <div class="avatar-frame">
+          <img id="avatarImg" src="assets/avatar-placeholder.svg" alt="avatar" />
+        </div>
+        <div class="intro">
+          <h1 id="name">Carter Ward</h1>
+          <p class="bio">CS graduate with a concentration in AI & Data Science. Interested in QA and technical writing, and always excited to break into new areas of tech.</p>
+          <div class="links">
+            <a href="https://www.linkedin.com/in/carterward2004" target="_blank" rel="noopener">LinkedIn</a>
+            <label class="upload-label">Upload avatar<input id="avatarUpload" type="file" accept="image/*"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input id="search" placeholder="Search projects..." />
+      <select id="languageFilter">
+        <option value="">All languages</option>
+      </select>
+    </section>
+
+    <section id="projects" class="projects-grid" aria-live="polite">
+      <!-- Project cards rendered here -->
+    </section>
+  </main>
+
+  <footer class="footer">Built with ❤️ • <a href="https://github.com/CSW04-exe">CSW04-exe</a></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
