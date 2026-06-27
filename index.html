@@ -1,45 +1,538 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carter Ward — Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carter Ward — CS graduate from UAH with interests in QA, technical writing, and AI & data science." />
+  <title>Carter Ward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-  <header class="banner">
-    <div class="banner-inner">
-      <div class="profile">
-        <div class="avatar-frame">
-          <img id="avatarImg" src="assets/avatar-placeholder.svg" alt="avatar" />
+
+  <!-- ═══════════════════════════════════════
+       BACK TO TOP
+  ════════════════════════════════════════ -->
+  <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </a>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand">CW</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about"   class="nav__link">About</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav__link nav__dropdown-btn" id="projDropdownBtn"
+                  aria-haspopup="true" aria-expanded="false">
+            Projects
+            <svg class="chevron" viewBox="0 0 24 24" width="12" height="12"
+                 fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <ul class="nav__dropdown" id="projDropdown" role="menu">
+            <li role="none"><a href="#projects" data-tab="evisions" class="nav__dropdown-item" role="menuitem">Evisions</a></li>
+            <li role="none"><a href="#projects" data-tab="school"   class="nav__dropdown-item" role="menuitem">School</a></li>
+            <li role="none"><a href="#projects" data-tab="personal" class="nav__dropdown-item" role="menuitem">Personal</a></li>
+            <li role="none"><a href="#projects" data-tab="misc"     class="nav__dropdown-item" role="menuitem">Misc</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#resume"  class="nav__link">Resume</a></li>
+        <li><a href="#certs"   class="nav__link">Certs</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="hero__content row">
+      <span class="hero__greeting">Hi, I'm</span>
+      <h1 class="hero__name">Carter Ward</h1>
+      <p class="hero__sub">
+        CS Graduate &nbsp;·&nbsp; QA &nbsp;·&nbsp; Technical Writing &nbsp;·&nbsp; AI &amp; Data Science
+      </p>
+
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact"  class="btn btn--outline">Get In Touch</a>
+      </div>
+
+      <div class="hero__socials">
+        <a href="mailto:csw.exe@gmail.com" class="social__link" aria-label="Email Carter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+          csw.exe@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/carterward2004" target="_blank" rel="noopener noreferrer"
+           class="social__link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          carterward2004
+        </a>
+        <a href="https://github.com/CSW04-exe" target="_blank" rel="noopener noreferrer"
+           class="social__link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          CSW04-exe
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll to About">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════ -->
+  <section id="about" class="about">
+    <div class="row">
+      <h2 class="section__heading">About Me</h2>
+
+      <div class="about__content">
+        <div class="about__photo-wrap">
+          <img src="assets/img/avatar-placeholder.svg" alt="Carter Ward" class="about__photo" id="avatarImg" />
+          <label class="about__photo-upload" for="avatarUpload" title="Upload photo" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <input type="file" id="avatarUpload" accept="image/*" />
+          </label>
         </div>
-        <div class="intro">
-          <h1 id="name">Carter Ward</h1>
-          <p class="bio">CS graduate with a concentration in AI & Data Science. Interested in QA and technical writing, and always excited to break into new areas of tech.</p>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/carterward2004" target="_blank" rel="noopener">LinkedIn</a>
-            <label class="upload-label">Upload avatar<input id="avatarUpload" type="file" accept="image/*"></label>
+
+        <div class="about__text">
+          <p>
+            I graduated from the University of Alabama in Huntsville in 2026 with a B.S. in Computer Science,
+            concentrating in AI and Data Science. Most of my coding projects came out of coursework —
+            machine learning models, algorithm implementations, and programs in Python, Java, Go, and Julia.
+          </p>
+          <p>
+            Outside of class I've done technical writing and editing work, contributed to the UAH College of
+            Business magazine, and picked up hands-on QA experience doing end-to-end testing for Fintegrate.
+            I'm still exploring which direction I want to go, but I like learning new tools and I'm comfortable
+            working across different areas of tech.
+          </p>
+          <div class="about__tags">
+            <span class="tag">UAH Class of &apos;26</span>
+            <span class="tag">AI &amp; Data Science</span>
+            <span class="tag">QA / E2E Testing</span>
+            <span class="tag">Technical Writing</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">Go</span>
+            <span class="tag">Julia</span>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <section class="controls">
-      <input id="search" placeholder="Search projects..." />
-      <select id="languageFilter">
-        <option value="">All languages</option>
-      </select>
-    </section>
+  <!-- ═══════════════════════════════════════
+       PROJECTS
+  ════════════════════════════════════════ -->
+  <section id="projects" class="projects">
+    <div class="row">
+      <h2 class="section__heading">Projects</h2>
 
-    <section id="projects" class="projects-grid" aria-live="polite">
-      <!-- Project cards rendered here -->
-    </section>
-  </main>
+      <!-- Tab navigation -->
+      <div class="tab-bar" role="tablist" aria-label="Project categories">
+        <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="evisions" aria-controls="panel-evisions">Evisions</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="school"   aria-controls="panel-school">School</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="personal" aria-controls="panel-personal">Personal</button>
+        <button class="tab-btn"        role="tab" aria-selected="false" data-tab="misc"     aria-controls="panel-misc">Misc</button>
+      </div>
 
-  <footer class="footer">Built with ❤️ • <a href="https://github.com/CSW04-exe">CSW04-exe</a></footer>
+      <!-- ── Evisions ───────────────────────────────────── -->
+      <div id="panel-evisions" class="tab-panel active" role="tabpanel">
+        <p class="panel__desc">
+          Work completed during my internship at Evisions — shadow days, project contributions,
+          and cross-team exposure.
+        </p>
 
-  <script src="script.js"></script>
+        <div class="work">
+          <!-- Work box 1 -->
+          <div class="work__box">
+            <div class="work__text">
+              <span class="work__category">Internship · Evisions</span>
+              <h3>Shadow Day Observations</h3>
+              <ul class="work__list">
+                <li>Cross-team department shadowing</li>
+                <li>Process and workflow documentation</li>
+                <li>Observations across engineering and QA</li>
+              </ul>
+              <div class="work__links">
+                <a href="mailto:csw.exe@gmail.com" class="link__text">Request Details <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="work__img work__img--1" role="img" aria-label="Shadow day work preview">
+                <div class="work__img-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="72" height="72" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="21" x2="9" y2="9"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work box 2 -->
+          <div class="work__box">
+            <div class="work__text">
+              <span class="work__category">Internship · Evisions</span>
+              <h3>Internship Project Work</h3>
+              <ul class="work__list">
+                <li>Hands-on project contributions</li>
+                <li>Team collaboration and communication</li>
+                <li>Details to be added as work progresses</li>
+              </ul>
+              <div class="work__links">
+                <a href="mailto:csw.exe@gmail.com" class="link__text">Request Details <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="work__img work__img--2" role="img" aria-label="Internship project preview">
+                <div class="work__img-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="72" height="72" aria-hidden="true">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="panel__note">Work conducted under NDA — full details available on request at <a href="mailto:csw.exe@gmail.com">csw.exe@gmail.com</a></p>
+      </div>
+
+      <!-- ── School ─────────────────────────────────────── -->
+      <div id="panel-school" class="tab-panel" role="tabpanel">
+        <p class="panel__desc">
+          Coding projects from UAH coursework — machine learning models, algorithm implementations,
+          and programs across Python, Java, Go, and Julia.
+        </p>
+
+        <div class="project-controls">
+          <input id="searchInput" class="search-input" type="search"
+                 placeholder="Search projects…" aria-label="Search coding projects" />
+          <select id="langFilter" class="lang-filter" aria-label="Filter by language">
+            <option value="">All languages</option>
+          </select>
+        </div>
+
+        <div id="schoolGrid" class="projects-grid" aria-live="polite" aria-label="School project cards">
+          <!-- Populated by main.js from data/projects.json -->
+        </div>
+      </div>
+
+      <!-- ── Personal ───────────────────────────────────── -->
+      <div id="panel-personal" class="tab-panel" role="tabpanel">
+        <p class="panel__desc">
+          Projects outside of school — technical writing, editorial work, and anything I've built on my own time.
+        </p>
+
+        <div class="work">
+          <!-- Work box 1 -->
+          <div class="work__box">
+            <div class="work__text">
+              <span class="work__category">Personal · Technical Writing</span>
+              <h3>Technical Documentation</h3>
+              <ul class="work__list">
+                <li>Documentation drafts for software topics</li>
+                <li>Style-guide reviews and clarity editing</li>
+                <li>Writing for technical audiences</li>
+              </ul>
+              <div class="work__links">
+                <a href="mailto:csw.exe@gmail.com" class="link__text">Request Samples <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="work__img work__img--3" role="img" aria-label="Technical documentation preview">
+                <div class="work__img-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="72" height="72" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work box 2 -->
+          <div class="work__box">
+            <div class="work__text">
+              <span class="work__category">Personal · Editorial</span>
+              <h3>Top 20 of 2026 &mdash; UAH CoB</h3>
+              <ul class="work__list">
+                <li>Editorial writing and content reviewing</li>
+                <li>UAH College of Business publication</li>
+                <li>Recognizing outstanding Class of &apos;26 students</li>
+              </ul>
+              <div class="work__links">
+                <span class="badge badge--pub">Published</span>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="work__img work__img--4" role="img" aria-label="UAH CoB magazine preview">
+                <div class="work__img-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="72" height="72" aria-hidden="true">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="panel__note">Samples available on request — <a href="mailto:csw.exe@gmail.com">csw.exe@gmail.com</a></p>
+      </div>
+
+      <!-- ── Misc ───────────────────────────────────────── -->
+      <div id="panel-misc" class="tab-panel" role="tabpanel">
+        <p class="panel__desc">
+          Sidework and miscellaneous projects — including fintech QA testing done outside of a formal role.
+        </p>
+
+        <div class="work">
+          <!-- Work box 1 -->
+          <div class="work__box">
+            <div class="work__text">
+              <span class="work__category">Misc · QA / Testing</span>
+              <h3>E2E Testing &mdash; Fintegrate</h3>
+              <ul class="work__list">
+                <li>Writing and executing test cases</li>
+                <li>Bug identification and documentation</li>
+                <li>User flow validation across the app</li>
+              </ul>
+              <div class="work__links">
+                <span class="badge">QA</span>
+                <span class="badge">E2E</span>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="work__img work__img--5" role="img" aria-label="Fintegrate QA testing preview">
+                <div class="work__img-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="72" height="72" aria-hidden="true">
+                    <polyline points="9 11 12 14 22 4"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="panel__note">Work completed under NDA — details available in conversation.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       RESUME
+  ════════════════════════════════════════ -->
+  <section id="resume" class="resume">
+    <div class="row">
+      <h2 class="section__heading">Resume</h2>
+
+      <div class="resume__body">
+        <div class="resume__preview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+               width="48" height="48" aria-hidden="true" style="color:var(--muted)">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <p>Resume available on request</p>
+          <span>A PDF download link will be added once finalized.</span>
+        </div>
+
+        <div class="resume__side">
+          <p>
+            My resume covers my CS background at UAH, QA and testing experience with Fintegrate,
+            technical writing and editorial work, and key coding projects.
+          </p>
+          <a href="mailto:csw.exe@gmail.com?subject=Resume%20Request" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 width="15" height="15" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <polyline points="2,4 12,13 22,4"/>
+            </svg>
+            Request via Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CERTIFICATIONS
+  ════════════════════════════════════════ -->
+  <section id="certs" class="certs">
+    <div class="row">
+      <h2 class="section__heading">Certifications</h2>
+
+      <div class="certs__grid">
+        <div class="cert-card">
+          <div class="cert-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="cert-card__info">
+            <span class="cert-card__name">Certification placeholder</span>
+            <span class="cert-card__issuer">Issuing organization</span>
+            <span class="cert-card__date">2026</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="panel__note">Certifications will be added as earned.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section id="contact" class="contact">
+    <div class="row">
+      <h2 class="section__heading">Get In Touch</h2>
+
+      <div class="contact__body">
+        <div class="contact__text">
+          <p>
+            Feel free to reach out — whether it's about a project, an opportunity, or just to connect.
+            I'm open to conversations around QA, technical writing, or anything CS-related.
+          </p>
+          <p>
+            The best way to reach me is by email. You can also find me on LinkedIn or GitHub.
+          </p>
+        </div>
+
+        <div class="contact__links">
+          <a href="mailto:csw.exe@gmail.com" class="contact__card">
+            <div class="contact__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <polyline points="2,4 12,13 22,4"/>
+              </svg>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__label">Email</span>
+              <span class="contact__value">csw.exe@gmail.com</span>
+            </div>
+            <svg class="contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+          <a href="https://www.linkedin.com/in/carterward2004" target="_blank" rel="noopener noreferrer" class="contact__card">
+            <div class="contact__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__label">LinkedIn</span>
+              <span class="contact__value">carterward2004</span>
+            </div>
+            <svg class="contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+          <a href="https://github.com/CSW04-exe" target="_blank" rel="noopener noreferrer" class="contact__card">
+            <div class="contact__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__label">GitHub</span>
+              <span class="contact__value">CSW04-exe</span>
+            </div>
+            <svg class="contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 Carter Ward</p>
+
+      <div class="footer__links">
+        <a href="https://github.com/CSW04-exe" target="_blank" rel="noopener noreferrer"
+           class="footer__icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/carterward2004" target="_blank" rel="noopener noreferrer"
+           class="footer__icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:csw.exe@gmail.com" class="footer__icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               width="18" height="18" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

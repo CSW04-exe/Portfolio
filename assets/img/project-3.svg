@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <text x="400" y="38" fill="#ff3258" font-family="monospace" font-size="17" text-anchor="middle" letter-spacing="1">Dynamic Movement — 2D Steering Behaviors</text>
+
+  <!-- Target marker -->
+  <circle cx="590" cy="240" r="28" fill="none" stroke="#ff3258" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="590" cy="240" r="8" fill="#ff3258" opacity="0.6"/>
+  <line x1="590" y1="205" x2="590" y2="272" stroke="#ff3258" stroke-width="1" opacity="0.5"/>
+  <line x1="555" y1="240" x2="622" y2="240" stroke="#ff3258" stroke-width="1" opacity="0.5"/>
+  <text x="590" y="284" fill="#ff3258" font-family="monospace" font-size="11" text-anchor="middle">TARGET</text>
+
+  <!-- Agent 1 — Seek -->
+  <g transform="translate(180, 200)">
+    <!-- Velocity vector -->
+    <line x1="0" y1="0" x2="95" y2="28" stroke="#00a3ff" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    <!-- Desired velocity -->
+    <line x1="0" y1="0" x2="110" y2="32" stroke="#0077cc" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-dim)"/>
+    <!-- Agent body -->
+    <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#00a3ff" stroke-width="2"/>
+    <polygon points="0,-12 10,8 -10,8" fill="#00a3ff" transform="rotate(70)"/>
+    <text x="0" y="40" fill="#888" font-family="monospace" font-size="11" text-anchor="middle">SEEK</text>
+  </g>
+
+  <!-- Agent 2 — Flee -->
+  <g transform="translate(400, 330)">
+    <!-- Velocity vector (away from target) -->
+    <line x1="0" y1="0" x2="-80" y2="60" stroke="#ff3258" stroke-width="2" marker-end="url(#arrow-pink)"/>
+    <!-- Agent body -->
+    <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#ff3258" stroke-width="2"/>
+    <polygon points="0,-12 10,8 -10,8" fill="#ff3258" transform="rotate(230)"/>
+    <text x="0" y="42" fill="#888" font-family="monospace" font-size="11" text-anchor="middle">FLEE</text>
+  </g>
+
+  <!-- Agent 3 — Arrive -->
+  <g transform="translate(590, 100)">
+    <!-- Slowing down vector (shorter) -->
+    <line x1="0" y1="0" x2="0" y2="85" stroke="#00ff88" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <!-- Slowing radius -->
+    <circle cx="0" cy="140" r="55" fill="none" stroke="#00ff88" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+    <!-- Agent body -->
+    <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#00ff88" stroke-width="2"/>
+    <polygon points="0,-12 10,8 -10,8" fill="#00ff88" transform="rotate(180)"/>
+    <text x="0" y="42" fill="#888" font-family="monospace" font-size="11" text-anchor="middle">ARRIVE</text>
+  </g>
+
+  <!-- Steering force labels -->
+  <text x="275" y="178" fill="#00a3ff" font-family="monospace" font-size="10">v⃗ velocity</text>
+  <text x="275" y="192" fill="#0077cc" font-family="monospace" font-size="10">d⃗ desired</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00a3ff"/>
+    </marker>
+    <marker id="arrow-dim" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0077cc"/>
+    </marker>
+    <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ff3258"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff88"/>
+    </marker>
+  </defs>
+
+  <!-- Trail dots for agent 1 -->
+  <circle cx="140" cy="193" r="3" fill="#00a3ff" opacity="0.4"/>
+  <circle cx="100" cy="186" r="3" fill="#00a3ff" opacity="0.25"/>
+  <circle cx="62"  cy="180" r="3" fill="#00a3ff" opacity="0.12"/>
+
+  <!-- Trail dots for agent 2 -->
+  <circle cx="420" cy="315" r="3" fill="#ff3258" opacity="0.4"/>
+  <circle cx="440" cy="300" r="3" fill="#ff3258" opacity="0.25"/>
+
+  <!-- Legend -->
+  <line x1="80"  y1="472" x2="108" y2="472" stroke="#00a3ff" stroke-width="2"/>
+  <text x="116" y="477" fill="#888" font-family="monospace" font-size="11">Seek</text>
+  <line x1="200" y1="472" x2="228" y2="472" stroke="#ff3258" stroke-width="2"/>
+  <text x="236" y="477" fill="#888" font-family="monospace" font-size="11">Flee</text>
+  <line x1="310" y1="472" x2="338" y2="472" stroke="#00ff88" stroke-width="2"/>
+  <text x="346" y="477" fill="#888" font-family="monospace" font-size="11">Arrive</text>
+  <text x="580" y="477" fill="#444" font-family="monospace" font-size="10">steering = desired − velocity</text>
+</svg>
